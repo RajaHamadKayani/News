@@ -35,7 +35,7 @@ class _LoginViewState extends State<LoginView>
       return false;
     } else {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) =>const HomeView()));
+          context, MaterialPageRoute(builder: (context) => Dashboard()));
       return true;
     }
   }

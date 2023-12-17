@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:news_app_project_1/services/responsive_layout/responsive_layout.dart';
 import 'package:news_app_project_1/view/home_view/home_view.dart';
+import 'package:news_app_project_1/view/sources_view/sources_view.dart';
 import 'package:news_app_project_1/view/top_headline/top_headline.dart';
 
 import '../login_view/login_view.dart';
@@ -27,7 +28,7 @@ class _DashboardState extends State<Dashboard>
     animationController = AnimationController(vsync: this);
   }
 
-  List<String> text = ["All News", "Top Headlines"];
+  List<String> text = ["All News", "Top Headlines", "News Sources"];
 
   navToRoute(BuildContext context, int index) {
     switch (index) {
@@ -40,6 +41,9 @@ class _DashboardState extends State<Dashboard>
             MaterialPageRoute(builder: (context) => const TopHeadlines()));
         break;
       case 2:
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const SourcesView()));
+        break;
       default:
         Container();
     }
@@ -54,7 +58,7 @@ class _DashboardState extends State<Dashboard>
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.teal,
+          backgroundColor: Colors.blue,
           leading: IconButton(
               onPressed: () {
                 Scaffold.of(context).openDrawer();
@@ -68,7 +72,7 @@ class _DashboardState extends State<Dashboard>
           title: widget.name,
           email: widget.email,
         ),
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.blue,
         body: Padding(
           padding: const EdgeInsets.all(10),
           child: Column(
@@ -148,7 +152,10 @@ class _DashboardState extends State<Dashboard>
                                   Text(
                                     text[index],
                                     style: GoogleFonts.poppins(
-                                        fontSize: 12,
+                                        fontSize:
+                                            !HomeResponsive.isMobile(context)
+                                                ? 25
+                                                : 18,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.black),
                                   )

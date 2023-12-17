@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app_project_1/utils/app_style/app_styles.dart';
 
 // ignore: must_be_immutable
 class TextFieldWidget extends StatelessWidget {
@@ -11,6 +12,7 @@ class TextFieldWidget extends StatelessWidget {
   double? borderRadius;
   VoidCallback? onTap;
   Widget? suffixIcon; // Change the type to Widget
+  void Function(String category)? onChanged; // Updated property
 
   TextFieldWidget({
     Key? key,
@@ -23,6 +25,7 @@ class TextFieldWidget extends StatelessWidget {
     required this.controller,
     this.hintText,
     this.onTap,
+    this.onChanged, // Added onChanged property
   }) : super(key: key);
 
   @override
@@ -43,6 +46,7 @@ class TextFieldWidget extends StatelessWidget {
             fontWeight: FontWeight.w500,
           ),
           controller: controller,
+          onChanged: onChanged, // Added onChanged property
           decoration: InputDecoration(
             suffixIcon: suffixIcon != null // Check if suffixIcon is not null
                 ? GestureDetector(
@@ -52,11 +56,8 @@ class TextFieldWidget extends StatelessWidget {
                 : null,
             border: InputBorder.none,
             hintText: hintText ?? "",
-            hintStyle: const TextStyle(
-              color: Colors.black,
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-            ),
+            
+            hintStyle: AppStyles.regularBodyBlack,
           ),
         ),
       ),
