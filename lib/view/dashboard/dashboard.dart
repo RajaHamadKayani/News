@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,7 +7,6 @@ import 'package:news_app_project_1/view/top_headline/top_headline.dart';
 
 import '../login_view/login_view.dart';
 import '../navigation_drawer/navigation_drawer.dart';
-
 
 // ignore: must_be_immutable
 class Dashboard extends StatefulWidget {
@@ -30,23 +28,18 @@ class _DashboardState extends State<Dashboard>
   }
 
   List<String> text = ["All News", "Top Headlines"];
-  List<String> animations = [
-    "assets/json/add_task.json",
-    "assets/json/live_location.json"
-  ];
 
   navToRoute(BuildContext context, int index) {
     switch (index) {
       case 0:
         Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) =>const  HomeView()));
+            context, MaterialPageRoute(builder: (context) => const HomeView()));
         break;
       case 1:
-         Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) =>const  TopHeadlines()));
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const TopHeadlines()));
         break;
       case 2:
-       
       default:
         Container();
     }
@@ -84,7 +77,10 @@ class _DashboardState extends State<Dashboard>
             children: [
               IconButton(
                   onPressed: () {
-                                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const LoginView()));
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginView()));
                   },
                   icon: const Icon(
                     Icons.arrow_back,
@@ -144,7 +140,7 @@ class _DashboardState extends State<Dashboard>
                                       height: 60,
                                       width: 80,
                                       child: Lottie.asset(
-                                          animations[index].toString(),
+                                          "assets/json/news.json",
                                           fit: BoxFit.cover)),
                                   const SizedBox(
                                     height: 30,
