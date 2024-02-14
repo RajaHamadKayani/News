@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:news_app_project_1/services/responsive_layout/responsive_layout.dart';
 import 'package:news_app_project_1/view/home_view/home_view.dart';
+import 'package:news_app_project_1/view/matchesList/categories.dart';
 import 'package:news_app_project_1/view/matchesList/matchesList.dart';
 import 'package:news_app_project_1/view/sources_view/sources_view.dart';
 import 'package:news_app_project_1/view/top_headline/top_headline.dart';
@@ -48,7 +49,8 @@ class _DashboardState extends State<Dashboard>
         break;
          case 3:
         Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => const MatchesList()));
+            MaterialPageRoute(builder: (context) =>  SportsScreen()));
+            // MaterialPageRoute(builder: (context) => const MatchesList()));
         break;
       default:
         Container();

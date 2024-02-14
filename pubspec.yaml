@@ -65,7 +65,9 @@ dependencies:
   youtube_player_flutter: ^8.1.2
   # battery_plus: ^2.3.0
   # permission_handler: ^11.0.1
-
+  url_launcher: ^6.2.4
+  chewie: ^1.2.0
+  video_player: ^2.4.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
