@@ -126,7 +126,7 @@ class _TopHeadlinesState extends State<TopHeadlines> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          "Source: ${sourceName}",
+                                          "Source: $sourceName",
                                           style: AppStyles
                                               .smallHeadlineMediumBlack,
                                         ),

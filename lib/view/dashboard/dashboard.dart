@@ -3,8 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:news_app_project_1/services/responsive_layout/responsive_layout.dart';
 import 'package:news_app_project_1/view/home_view/home_view.dart';
+import 'package:news_app_project_1/view/matchesList/matchesList.dart';
 import 'package:news_app_project_1/view/sources_view/sources_view.dart';
 import 'package:news_app_project_1/view/top_headline/top_headline.dart';
+import 'package:news_app_project_1/view/video_stream/video_stream.dart';
 
 import '../login_view/login_view.dart';
 import '../navigation_drawer/navigation_drawer.dart';
@@ -28,7 +30,7 @@ class _DashboardState extends State<Dashboard>
     animationController = AnimationController(vsync: this);
   }
 
-  List<String> text = ["All News", "Top Headlines", "News Sources"];
+  List<String> text = ["All News", "Top Headlines", "News Sources","Sports Stream"];
 
   navToRoute(BuildContext context, int index) {
     switch (index) {
@@ -43,6 +45,10 @@ class _DashboardState extends State<Dashboard>
       case 2:
         Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (context) => const SourcesView()));
+        break;
+         case 3:
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const MatchesList()));
         break;
       default:
         Container();
